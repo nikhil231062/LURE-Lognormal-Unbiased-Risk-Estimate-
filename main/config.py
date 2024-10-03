@@ -1,7 +1,7 @@
 import os
 
 # path to saving models
-models_dir = './model/unet5'
+models_dir = '../model/'
 # path to saving loss plots
 losses_dir = 'losses'
 
@@ -25,7 +25,7 @@ train_percentage = 0.8
 
 # epsilon = 0.5
 resume = False  # False for trainig from scratch, True for loading a previouslys saved weight
-ckpt='best_muree_model.pth' # model file path to load the weights from, only useful when resume is True
+ckpt='best_mure_model.pth' # model file path to load the weights from, only useful when resume is True
 
 lr = 1e-6      # learning rate
 epochs = 10    # epochs to train for 
@@ -40,5 +40,5 @@ batch_size = 4 # try decreasing the batch_size if there is a memory error
 log_interval = 25
 
 test_dir = os.path.join(data_dir, val_dir, noisy_dir)
-res_dir = 'outputs/unet5'
+res_dir = '../outputs/'
 test_bs = 64

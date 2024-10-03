@@ -1,6 +1,14 @@
 import cv2
 import numpy as np
+
+import argparse
+
 np.random.seed(42)
+
+parser=argparse.ArgumentParser("Noise Estimation")
+
+
+parser.add_argument("--img_path",default='../data/noisy_data/noisy_boat.png')
 
 def left_shift_subtract_cols(image):
   rows, cols = image.shape
@@ -28,7 +36,8 @@ def left_shift_subtract_rows_cols(image):
 
 
 
-img=cv2.imread(f"../data/noisy_data/noisy_boat.png")
+args=parser.parse_args()
+img=cv2.imread(args.img_path)
 img_gray=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
 original_gray = img_gray.copy()
 m,n=img_gray.shape

@@ -8,7 +8,8 @@ import config as cfg
 import torch.nn as nn
 from skimage.metrics import structural_similarity as ssim
 from deepinv.models import DnCNN,DRUNet,SCUNet,GSDRUNet
-from loss import UNet,MC_LURE,CustomLoss4
+from loss import MC_LURE
+from model import UNet
 import pytorch_msssim
 np.random.seed(0)
 res_dir = cfg.res_dir

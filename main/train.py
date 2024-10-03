@@ -11,7 +11,8 @@ import torch.optim as optim
 from torch.optim import lr_scheduler
 from torchvision import transforms
 # from loss_func import MC_LURE,MSE_Loss
-from loss import UNet,MC_LURE,MSE_Loss
+from loss import MC_LURE,MSE_Loss
+from model import UNet
 from datasets import DAE_dataset
 import config as cfg
 from pytorch_msssim import ssim
