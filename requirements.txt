@@ -31,7 +31,7 @@ PyYAML==6.0.1
 scikit-image==0.23.1
 scipy==1.13.0
 timm==0.9.16
-torch==2.2.1+cu121
-torchaudio==2.2.1+cu121
-torchvision==0.17.1+cu121
+torch==2.2.1
+torchaudio==2.2.1
+torchvision==0.17.1
 tqdm==4.66.2

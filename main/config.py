@@ -6,7 +6,7 @@ models_dir = '../model/'
 losses_dir = 'losses'
 
 # path to the data directories
-data_dir = './afhq/afhq/'
+data_dir = '../afhq/afhq/'
 train_dir = 'train/'
 val_dir = 'val/'
 imgs_dir = 'imgs'
