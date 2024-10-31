@@ -201,7 +201,9 @@ for epoch in range(epochs_till_now, epochs_till_now+epochs):
 
             out = model(noisy_imgs)
             mse_loss = loss_fn1(out,imgs)
+            print("The MSE is :" ,mse_loss )
             loss = loss_fn(out, noisy_imgs,torch.tensor(cfg.sigma),torch.tensor(cfg.mu),model,device,k)
+            print("The MC LURE is :" ,loss )
             ssim1=ssim(imgs,out, data_range=1.0, size_average=True)
             running_val_mse_loss.append(mse_loss.item())
             running_val_mure_loss.append(loss.item())
