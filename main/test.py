@@ -45,7 +45,7 @@ def denoise(noisy_imgs, out):
     denoised = np.concatenate((noisy_imgs, out), axis = 0)
     return denoised 
 
-def mona_post_processing(out1,org,noisy):
+def post_processing(out1,org,noisy):
     A = torch.max(out1).item()
     B = torch.min(out1).item()
     out1 = out1.squeeze().squeeze().cpu()
@@ -84,8 +84,8 @@ SSIM_Sum_Output = 0
 SSIM_Sum_Output1 = 0 
 SSIM_Sum_Input1 = 0 
 loss_fn1 = nn.MSELoss()
-for i in os.listdir('../data/afhq/val/imgs'):
-    img=cv2.imread(f"../data/afhq/val/imgs/{i}")
+for i in os.listdir('../data/afhq/val/cat'):
+    img=cv2.imread(f"../data/afhq/val/cat/{i}")
     img_gray=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     # noisy_img=cv2.resize(img_gray,(512,512))
     cv2.imwrite(f"{cfg.res_dir}/act_{i}.jpg",img_gray)
@@ -120,7 +120,7 @@ for i in os.listdir('../data/afhq/val/imgs'):
         ssim_list_output.append(ssimlib.item())
         ssimin=pytorch_msssim.ssim(img_gray1,noisy_img, data_range=1.0)
         ssim_list_input.append(ssimin.item())
-        psnr1,psnr2,ssim1,ssim2,denoised = mona_post_processing(out,img_gray,y)
+        psnr1,psnr2,ssim1,ssim2,denoised = post_processing(out,img_gray,y)
         denoised2=get_img_strip(out)
         PSNR_Sum_Input += psnr11
         SSIM_Sum_Input += ssim1

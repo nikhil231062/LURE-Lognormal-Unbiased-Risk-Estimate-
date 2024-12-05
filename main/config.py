@@ -1,15 +1,15 @@
 import os
 
 # path to saving models
-models_dir = '../model/'
+models_dir = '/home/gayathri/LURE-Lognormal-Unbiased-Risk-Estimate-/model/'
 # path to saving loss plots
 losses_dir = 'losses'
 
 # path to the data directories
-data_dir = '../afhq/afhq/'
+data_dir = '/home/gayathri/LURE-Lognormal-Unbiased-Risk-Estimate-/data/afhq'
 train_dir = 'train/'
 val_dir = 'val/'
-imgs_dir = 'imgs'
+imgs_dir = 'cat'
 noisy_dir = 'noisy'
 debug_dir = 'debug'
 
@@ -34,11 +34,11 @@ sigma=0.3
 mu=0.5
 
 # batch size for train and val loaders
-batch_size = 4 # try decreasing the batch_size if there is a memory error
+batch_size = 1 # try decreasing the batch_size if there is a memory error
 
 # log interval for training and validation
 log_interval = 25
 
 test_dir = os.path.join(data_dir, val_dir, noisy_dir)
-res_dir = '../outputs/'
+res_dir = '/home/gayathri/LURE-Lognormal-Unbiased-Risk-Estimate-/outputs/'
 test_bs = 64

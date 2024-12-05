@@ -18,7 +18,8 @@ import config as cfg
 from pytorch_msssim import ssim
 import csv 
 from deepinv.models import DnCNN,DRUNet,SwinIR,SCUNet,GSDRUNet
-device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
+
+device = torch.device("cuda:1") if torch.cuda.is_available() else torch.device("cpu")
 print('device: ', device)
 
 script_time = time.time()
@@ -288,7 +289,7 @@ plt.plot(train_mure_loss,'b',label='Train_MURE')
 plt.plot(val_mse_loss,'g',label='Val_MSE')
 plt.plot(val_mure_loss,'y',label='Val_MURE')
 plt.legend()
-plt.savefig(f'./plots/unet_lure_mar.png')
+plt.savefig(f'/home/gayathri/LURE-Lognormal-Unbiased-Risk-Estimate-/plots/unet_lure_mar.png')
 
 
 

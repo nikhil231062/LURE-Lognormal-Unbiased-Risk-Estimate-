@@ -36,7 +36,7 @@ class MC_LURE(nn.Module):
 
             dot_product1 = torch.dot(torch.flatten(noisy_img[i][0]),torch.flatten(denoised_img[i][0]))
             loss += (exp_term1 * (norm_noisy_img**2) + (norm_denoised_img**2) - 2 * exp_term2 * (dot_product1- (sigma**2)*dot_product2))/(noisy_img[i][0].shape[0]*noisy_img[i][0].shape[1])
-        return (loss / (noisy_img.shape[0] * noisy_img.shape[1])) 
+        return (loss / (noisy_img.shape[0] * noisy_img.shape[1]))**2
     
 class MSE_Loss(nn.Module):
     def __init__(self):
@@ -51,4 +51,4 @@ class MSE_Loss(nn.Module):
             dot_product = torch.dot(torch.flatten(img[i][0]), torch.flatten(denoised_img[i][0]))
 
             loss += ((norm_img**2) + (norm_denoised_img**2) - 2 * dot_product)/(img[i][0].shape[0]**2)
-        return (loss/(img.shape[0] * img.shape[1])) 
+        return (loss/(img.shape[0] * img.shape[1])) **2

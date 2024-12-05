@@ -8,7 +8,7 @@ class DAE_dataset(Dataset):
     def __init__(self, data_dir, transform = None):
         self.data_dir = data_dir
         self.transform = transform
-        self.imgs_data       = self.get_data(os.path.join(self.data_dir, 'imgs'))
+        self.imgs_data = self.get_data(os.path.join(self.data_dir, 'cat'))
         
     def get_data(self, data_path):
         data = []
