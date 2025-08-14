@@ -1,0 +1,4 @@
+model_checkpoint_path: "/home/chaksuai/SIAM_LOGNORMAL/sar2sar_ours/SAR2SAR-train/checkpoint/model.ckpt-29"
+all_model_checkpoint_paths: "/home/chaksuai/SIAM_LOGNORMAL/sar2sar_ours/SAR2SAR-train/checkpoint/model.ckpt-27"
+all_model_checkpoint_paths: "/home/chaksuai/SIAM_LOGNORMAL/sar2sar_ours/SAR2SAR-train/checkpoint/model.ckpt-28"
+all_model_checkpoint_paths: "/home/chaksuai/SIAM_LOGNORMAL/sar2sar_ours/SAR2SAR-train/checkpoint/model.ckpt-29"
